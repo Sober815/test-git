@@ -1,17 +1,41 @@
 #include <iostream>
-//window端修改的
-using namespace std;
-void sort(int arr[],int size)
-{
-    for(int i=0;i<size;i++){
-        for(int j=i+1;i<size-1-i;j++){
-            if(a[j]>a[j+1])
-            {
-                swap(a[j],a[j+1]);
-            }
-        }
-    }
 
+using namespace std;
+//快排
+void sort(int arr[],int left,int right)
+{
+   
+  if(left>=right)
+	  return;
+  int first=left;
+  int last=right;
+  int key=arr[first];
+  while(first<last)
+  {
+	  //从后往前
+	  while(first<last&&key<a[last])
+	  {
+		  last--;//直接往前一个不变化
+	  }
+	  if(first<last)
+	  {
+		  a[first++]=a[last];
+	  }
+	  //从前往后
+	  while(first<last&&key>=a[first])
+	  {first++;}
+	  if(first<last)
+	  {
+		  a[last--]=a[first];}
+
+
+
+  }
+  arr[first]=key;
+  //前半递归
+  sort(arr,left,first-1);
+  //后半递归
+  sort(arr,first+1,right);
 }
 //ubuntu 修改的
 int main()
