@@ -13,7 +13,7 @@ void sort(int arr[],int size)
     }
 
 }
-
+//ubuntu 修改的
 int main()
 {
     int arr[]={12,4,89,43,21,78};
