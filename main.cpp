@@ -27,7 +27,7 @@ void sort(int arr[],int left,int right)
 	  if(first<last)
 	  {
 		  a[last--]=a[first];}
-
+	//快排
 
 
   }
